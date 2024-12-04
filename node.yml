@@ -1,0 +1,14 @@
+---
+- name: Copy and execute shell script
+  hosts: production
+  become: yes
+  tasks:
+    - name: Copy the shell script to the managed node
+      copy:
+        src: /path/to/deploy.sh  
+        dest: /tmp/deploy.sh
+        mode: '0755'
+
+    - name: Execute the shell script
+      command: /tmp/deploy.sh
+      ignore_errors: yes

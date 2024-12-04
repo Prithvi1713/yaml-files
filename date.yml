@@ -1,0 +1,8 @@
+---
+- name: display current date and user
+  hosts: all
+  tasks:
+    - name: run date command
+      command: date
+    - name: name
+      command: whoami

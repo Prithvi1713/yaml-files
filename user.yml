@@ -1,0 +1,23 @@
+---
+- name: Add multiple users with home directories
+  hosts: production
+  become: yes
+  tasks:
+    - name: Add user 'user1'
+      user:
+        name: user1
+        state: present
+        create_home: yes
+
+    - name: Add user 'user2'
+      user:
+        name: user2
+        state: present
+        create_home: yes
+
+    - name: Add user 'user3'
+      user:
+        name: user3
+        state: present
+        create_home: yes
+

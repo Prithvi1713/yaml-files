@@ -1,0 +1,16 @@
+---
+  name: java install
+  hosts: production
+  become: yes
+  tasks:
+    - name: apt package
+      apt:
+        update_cache: yes
+      - name: install java
+        apt:
+          name: openjdk-17-jdk
+          state: present
+      - name: java version
+        command: java --version
+
+
